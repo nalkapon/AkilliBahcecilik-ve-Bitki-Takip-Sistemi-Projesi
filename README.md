@@ -1,9 +1,7 @@
-# OgrenciKayitDersTakipSistemi
-Problem Tanımı: "Öğrenci Kayıt ve Ders Takip Sistemi", bir üniversitedeki öğrencilerin ders kayıt süreçlerini, aldıkları dersleri, dönem boyunca aldıkları notları ve derslerle ilgili diğer bilgileri takip etmeyi sağlayan bir sistemdir. Bu sistem öğrencilerin ders kayıt işlemlerini, ders notlarını ve ders programlarını takip etmelerini sağlarken, öğretmenlerin de öğrenci bilgilerini güncelleyip yönetmelerine olanak tanır.
-
-Bu sistemin temel işlevleri şunlardır:
-
--Öğrencilerin ders kayıtlarını yapabilmeleri
--Dönemlik ders programlarının görüntülenmesi
--Öğrencilerin notlarının girilmesi ve güncellenmesi
--Öğrencilerin aldıkları derslerin takip edilmesi ve notlarının görüntülenmesi
+Akıllı Bahçecilik ve Bitki Takip Sistemi, bahçelerde bulunan bitkilerin bakım süreçlerini ve gelişimlerini takip etmeyi amaçlayan bir veritabanı sistemidir. Bu sistem, bahçelerdeki bitki türlerinin sulama sıklıklarını, gübreleme planlarını, iklim koşullarını ve hastalık durumlarını kaydederek, bitki sağlığını ve bakım işlemlerini optimize etmeyi sağlar.
+Temel İşlevler:
+•	Bitkilerin sulama ve gübreleme planlarının takip edilmesi
+•	Bitki hastalıklarının ve tedavi süreçlerinin kaydedilmesi
+•	İklim bilgileri ile bitki büyüme sürecinin ilişkilendirilmesi
+•	Bahçede çalışan bahçıvanların görevlerinin izlenmesi
+Bu sistem, bahçıvanlara ve bahçe sahiplerine bitki bakımı için gerekli veriyi sağlayarak, bitkilerin sağlıklı büyümesini desteklemektedir.
