@@ -123,7 +123,7 @@ const Bakim = () => {
       <table className="bakim-table">
         <thead>
           <tr>
-            <th>Bakım ID</th>
+            {/* <th>Bakım ID</th> */}
             <th>Bitki ID</th>
             <th>Bahçıvan ID</th>
             <th>Bakım Türü</th>
@@ -135,7 +135,7 @@ const Bakim = () => {
         <tbody>
           {bakimListesi.map((bakim) => (
             <tr key={bakim.bakim_id}>
-              <td>{bakim.bakim_id}</td>
+              {/* <td>{bakim.bakim_id}</td> */}
               <td>{bakim.bitki_id}</td>
               <td>{bakim.bahcivan_id}</td>
               <td>{bakim.bakim_turu}</td>

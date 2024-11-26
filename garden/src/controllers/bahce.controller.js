@@ -1,13 +1,13 @@
 // Bahçe Ekleme (POST)
 exports.create = (req, res) => {
-    const { bahce_adi, konum, alan_buyuklugu, bahcivan_id } = req.body;
+    const { bahce_adi, konum, alan_buyuklugu } = req.body;
 
-    if (!bahce_adi || !konum || !alan_buyuklugu || !bahcivan_id) {
+    if (!bahce_adi || !konum || !alan_buyuklugu) {
         return res.status(400).send({ message: 'Tüm alanlar zorunludur!' });
     }
 
-    const query = `INSERT INTO bahce (bahce_adi, konum, alan_buyuklugu, bahcivan_id) VALUES (?, ?, ?, ?)`;
-    req.db.query(query, [bahce_adi, konum, alan_buyuklugu, bahcivan_id], (err, result) => {
+    const query = `INSERT INTO bahce (bahce_adi, konum, alan_buyuklugu) VALUES (?, ?, ?)`;
+    req.db.query(query, [bahce_adi, konum, alan_buyuklugu], (err, result) => {
         if (err) {
             console.error('Veritabanı Hatası (Ekleme):', err.message);
             return res.status(500).send({ message: 'Bahçe eklenirken bir hata oluştu.' });
@@ -33,14 +33,14 @@ exports.getAll = (req, res) => {
 // Bahçe Güncelleme (PUT)
 exports.update = (req, res) => {
     const { id } = req.params;
-    const { bahce_adi, konum, alan_buyuklugu, bahcivan_id } = req.body;
+    const { bahce_adi, konum, alan_buyuklugu } = req.body;
 
-    if (!bahce_adi || !konum || !alan_buyuklugu || !bahcivan_id) {
+    if (!bahce_adi || !konum || !alan_buyuklugu) {
         return res.status(400).send({ message: 'Tüm alanlar zorunludur!' });
     }
 
-    const query = `UPDATE bahce SET bahce_adi = ?, konum = ?, alan_buyuklugu = ?, bahcivan_id = ? WHERE bahce_id = ?`;
-    req.db.query(query, [bahce_adi, konum, alan_buyuklugu, bahcivan_id, id], (err, result) => {
+    const query = `UPDATE bahce SET bahce_adi = ?, konum = ?, alan_buyuklugu = ? WHERE bahce_id = ?`;
+    req.db.query(query, [bahce_adi, konum, alan_buyuklugu, id], (err, result) => {
         if (err) {
             console.error('Veritabanı Hatası (Güncelleme):', err.message);
             return res.status(500).send({ message: 'Bahçe güncellenirken bir hata oluştu.' });

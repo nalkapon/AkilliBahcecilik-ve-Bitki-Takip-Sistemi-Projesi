@@ -8,7 +8,6 @@ const HastalikTakibi = () => {
     bitki_id: '',
     hastalik_id: '',
     hastalik_tarihi: '',
-    tedavi_yonetimi: '',
     notlar: '',
   });
 
@@ -30,7 +29,6 @@ const HastalikTakibi = () => {
         bitki_id: '',
         hastalik_id: '',
         hastalik_tarihi: '',
-        tedavi_yonetimi: '',
         notlar: '',
       });
       fetchHastalikTakibi();
@@ -76,11 +74,6 @@ const HastalikTakibi = () => {
           onChange={(e) => setFormData({ ...formData, hastalik_tarihi: e.target.value })}
         />
         <textarea
-          placeholder="Tedavi Yönetimi"
-          value={formData.tedavi_yonetimi}
-          onChange={(e) => setFormData({ ...formData, tedavi_yonetimi: e.target.value })}
-        ></textarea>
-        <textarea
           placeholder="Notlar"
           value={formData.notlar}
           onChange={(e) => setFormData({ ...formData, notlar: e.target.value })}
@@ -90,11 +83,9 @@ const HastalikTakibi = () => {
       <table className="hastalik-table">
         <thead>
           <tr>
-            {/* ID Sütununu Gizliyoruz */}
             <th>Bitki ID</th>
             <th>Hastalık ID</th>
             <th>Tarih</th>
-            <th>Tedavi Yönetimi</th>
             <th>Notlar</th>
             <th>İşlemler</th>
           </tr>
@@ -102,11 +93,9 @@ const HastalikTakibi = () => {
         <tbody>
           {hastalikTakibiList.map((item) => (
             <tr key={item.hastalik_takibi_id}>
-              {/* ID'yi Gizledik */}
               <td>{item.bitki_id}</td>
               <td>{item.hastalik_id}</td>
               <td>{item.hastalik_tarihi}</td>
-              <td>{item.tedavi_yonetimi}</td>
               <td>{item.notlar}</td>
               <td>
                 <button onClick={() => deleteHastalikTakibi(item.hastalik_takibi_id)}>Sil</button>

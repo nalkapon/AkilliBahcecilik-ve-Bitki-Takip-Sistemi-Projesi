@@ -8,7 +8,6 @@ const Bahce = () => {
     bahce_adi: "",
     konum: "",
     alan_buyuklugu: "",
-    bahcivan_id: "",
   });
 
   const [editingId, setEditingId] = useState(null);
@@ -35,22 +34,16 @@ const Bahce = () => {
     });
   };
 
-  // Yeni bahçe ekleme
-// Yeni Bahçe Ekleme veya Güncelleme
-const handleSubmit = async (e) => {
+  // Yeni bahçe ekleme veya güncelleme
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Doğrulama: Alan Büyüklüğü ve Bahçıvan ID
+
+    // Doğrulama: Alan Büyüklüğü
     if (formData.alan_buyuklugu <= 0) {
       alert("Alan büyüklüğü sıfırdan büyük olmalıdır!");
       return;
     }
-  
-    if (formData.bahcivan_id <= 0) {
-      alert("Bahçıvan ID sıfırdan büyük olmalıdır!");
-      return;
-    }
-  
+
     try {
       if (editingId) {
         await axios.put(`http://localhost:3001/api/bahce/${editingId}`, formData);
@@ -58,13 +51,12 @@ const handleSubmit = async (e) => {
       } else {
         await axios.post("http://localhost:3001/api/bahce", formData);
       }
-      setFormData({ bahce_adi: "", konum: "", alan_buyuklugu: "", bahcivan_id: "" });
+      setFormData({ bahce_adi: "", konum: "", alan_buyuklugu: "" });
       fetchBahceler();
     } catch (error) {
       console.error("Bahçe eklenirken/güncellenirken hata oluştu:", error);
     }
   };
-  
 
   // Bahçe silme
   const handleDelete = async (id) => {
@@ -83,7 +75,6 @@ const handleSubmit = async (e) => {
       bahce_adi: bahce.bahce_adi,
       konum: bahce.konum,
       alan_buyuklugu: bahce.alan_buyuklugu,
-      bahcivan_id: bahce.bahcivan_id,
     });
   };
 
@@ -115,14 +106,6 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           required
         />
-        <input
-          type="number"
-          name="bahcivan_id"
-          placeholder="Bahçıvan ID"
-          value={formData.bahcivan_id}
-          onChange={handleChange}
-          required
-        />
         <button type="submit">{editingId ? "Güncelle" : "Ekle"}</button>
       </form>
       <div className="bahce-list">
@@ -131,7 +114,6 @@ const handleSubmit = async (e) => {
             <h3>{bahce.bahce_adi}</h3>
             <p>Konum: {bahce.konum}</p>
             <p>Alan Büyüklüğü: {bahce.alan_buyuklugu} m²</p>
-            <p>Bahçıvan ID: {bahce.bahcivan_id}</p>
             <button onClick={() => handleEdit(bahce)}>Düzenle</button>
             <button onClick={() => handleDelete(bahce.bahce_id)}>Sil</button>
           </div>

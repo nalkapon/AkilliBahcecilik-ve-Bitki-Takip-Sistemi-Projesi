@@ -1,32 +1,34 @@
 // Hastalık Takibi Ekleme (POST)
 exports.create = (req, res) => {
-    const { bitki_id, hastalik_id, hastalik_tarihi, tedavi_yonetimi, notlar } = req.body;
+    const { bitki_id, hastalik_id, hastalik_tarihi, notlar } = req.body;
 
-    // Doğrulama
-    if (!bitki_id || !hastalik_id || !hastalik_tarihi || !tedavi_yonetimi) {
+    // Verilerin doğru geldiğini kontrol et
+    console.log(req.body);
+
+    if (!bitki_id || !hastalik_id || !hastalik_tarihi) {
         return res.status(400).send({ message: 'Tüm alanlar zorunludur!' });
     }
 
-    const query = `INSERT INTO hastalik_takibi (bitki_id, hastalik_id, hastalik_tarihi, tedavi_yonetimi, notlar) VALUES (?, ?, ?, ?, ?)`;
-    req.db.query(query, [bitki_id, hastalik_id, hastalik_tarihi, tedavi_yonetimi, notlar], (err, result) => {
+    // Sadece gerekli verileri kullanıyoruz, tedavi_yonetimi artık gönderilmiyor
+    const query = 'INSERT INTO hastalik_takibi (bitki_id, hastalik_id, hastalik_tarihi, notlar) VALUES (?, ?, ?, ?)';
+
+    req.db.query(query, [bitki_id, hastalik_id, hastalik_tarihi, notlar], (err, result) => {
         if (err) {
             console.error('Veritabanı Hatası (Ekleme):', err.message);
-            return res.status(500).send({ message: 'Hastalık takibi eklenirken bir hata oluştu.' });
+            return res.status(500).send({ message: 'Veri eklenemedi', error: err.message });
         }
-        console.log('Hastalık Takibi Başarıyla Eklendi:', result);
-        res.status(201).send({ message: 'Hastalık takibi başarıyla eklendi!', id: result.insertId });
+
+        res.status(201).send({ message: 'Hastalık takibi başarıyla eklendi', id: result.insertId });
     });
 };
 
-
 // Tüm Hastalık Takiplerini Listeleme (GET)
 exports.getAll = (req, res) => {
-    const query = `
-        SELECT ht.*, b.bitki_adi, hk.hastalik_adi
-        FROM hastalik_takibi ht
-        JOIN bitki b ON ht.bitki_id = b.bitki_id
-        JOIN hastalik_katalogu hk ON ht.hastalik_id = hk.hastalik_id
-    `;
+    const query = `SELECT ht.*, b.bitki_adi, hk.hastalik_adi
+                   FROM hastalik_takibi ht
+                   JOIN bitki b ON ht.bitki_id = b.bitki_id
+                   JOIN hastalik_katalogu hk ON ht.hastalik_id = hk.hastalik_id`;
+
     req.db.query(query, (err, result) => {
         if (err) {
             console.error('Veritabanı Hatası (Listeleme):', err.message);
@@ -36,6 +38,7 @@ exports.getAll = (req, res) => {
         res.status(200).send({ message: 'Hastalık takipleri başarıyla alındı!', data: result });
     });
 };
+
 
 // Hastalık Takibi Güncelleme (PUT)
 exports.update = (req, res) => {

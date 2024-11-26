@@ -43,6 +43,7 @@ require('./routes/bahcivan_bahce.routes')(app);
 
 
 
+
 // 404 Hatası için bir middleware ekleyin
 app.use((req, res, next) => {
     res.status(404).send({

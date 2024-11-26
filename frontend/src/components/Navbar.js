@@ -9,24 +9,27 @@ const Navbar = () => {
                 <li>
                     <Link to="/">Anasayfa</Link>
                 </li>
-                <li>
-                    <Link to="/gubre">Gübre</Link>
-                </li>
+               
                 <li>
                     <Link to="/bitki">Bitkiler</Link>
                 </li>
                 <li>
                  <Link to="/bahce">Bahçe</Link>
                 </li>
-                <li>
-          <Link to="/sulama-plani">Sulama Planı</Link>
-        </li>
-        <li>
-  <Link to="/bakim">Bakım</Link>
-</li>
+         
+   
 <li>
   <Link to="/bahcivan">Bahçıvan</Link>
 </li>
+<li>
+  <a href="/bahcivan-bahce">BahcivanBahce</a>
+</li>
+<li>
+  <Link to="/bakim">Bakım</Link>
+</li>
+<li>
+                    <Link to="/gubre">Gübre</Link>
+                </li>
 <li>
   <a href="/gubreleme">Gübreleme Planı</a>
 </li>
@@ -34,18 +37,18 @@ const Navbar = () => {
   <a href="/hastalik-takibi">Hastalık Takibi</a>
 </li>
 <li>
+  <a href="/hastalik-katalogu">Hastalık Kataloğu</a>
+</li>
+<li>
+          <Link to="/sulama-plani">Sulama Planı</Link>
+        </li>
+<li>
   <a href="/iklim-takibi">İklim Takibi</a>
 </li>
 <li>
   <a href="/tur-katalogu">Tür Kataloğu</a>
 </li>
-<li>
-  <a href="/hastalik-katalogu">Hastalık Kataloğu</a>
-</li>
-<li>
-  <a href="/bahcivan-bahce">BahcivanBahce</a>
-</li>
-<li><Link to="/raporlar">Raporlar</Link></li>
+{/* <li><Link to="/raporlar">Raporlar</Link></li> */}
        
 
 
