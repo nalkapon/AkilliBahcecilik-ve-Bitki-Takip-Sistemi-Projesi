@@ -1,0 +1,42 @@
+.home-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.start-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.start-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.start-button:hover {
+  background-color: #ff8c00;
+}

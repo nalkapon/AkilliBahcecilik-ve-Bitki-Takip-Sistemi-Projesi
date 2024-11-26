@@ -1,0 +1,80 @@
+/* Genel uygulama stili */
+.app-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  
+  .app-header {
+    background-color: #2e8b57;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .app-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .app-header p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-container {
+    margin-top: 20px;
+  }
+  
+  .cta-button {
+    background-color: #f7c744;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff8c00;
+  }
+  
+  /* Özellikler bölümü */
+  .features-section {
+    margin-top: 50px;
+    padding: 20px;
+  }
+  
+  .features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2e8b57;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    width: 30%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .feature-item p {
+    font-size: 1rem;
+    color: #777;
+  }
+  

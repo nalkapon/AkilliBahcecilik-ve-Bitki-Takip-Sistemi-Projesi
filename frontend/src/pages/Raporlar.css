@@ -1,0 +1,38 @@
+/* Başlık Stilleri */
+h1 {
+  font-size: 2rem; /* Büyük başlık fontu */
+  margin-bottom: 20px; /* Başlık altındaki boşluk */
+}
+
+h2 {
+  font-size: 1.5rem; /* Orta büyüklükte başlık */
+  color: #2e8b57; /* Yeşil renk tonu */
+  margin-bottom: 15px; /* Başlık altındaki boşluk */
+}
+
+h3 {
+  font-size: 1.2rem; /* Küçük başlık fontu */
+  margin-bottom: 10px; /* Başlık altındaki boşluk */
+}
+
+/* Liste Stilleri */
+ul {
+  list-style-type: none; /* Liste işaretlerini kaldır */
+  padding-left: 0; /* Soldan boşluk kaldır */
+}
+
+li {
+  margin: 10px 0; /* Liste elemanları arasında dikey boşluk */
+  padding-left: 10px; /* Liste elemanlarının solunda hafif bir iç boşluk */
+  position: relative; /* Liste öğelerine konum vermek için */
+}
+
+/* Liste elemanlarına işaret eklemek için */
+li::before {
+  content: '•'; /* Liste işaretini manuel olarak ekle */
+  position: absolute;
+  left: 0; /* İşareti sola hizala */
+  color: #2e8b57; /* İşaretin rengi */
+  font-size: 1.5rem; /* İşaretin boyutu */
+  margin-left: -15px; /* İşaretin biraz sola kayması için */
+}

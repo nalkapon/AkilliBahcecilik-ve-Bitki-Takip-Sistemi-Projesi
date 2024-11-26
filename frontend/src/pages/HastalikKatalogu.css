@@ -1,0 +1,67 @@
+.hastalik-container {
+    padding: 20px;
+  }
+  
+  .hastalik-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .hastalik-form input,
+  .hastalik-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .hastalik-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hastalik-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .hastalik-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .hastalik-table th,
+  .hastalik-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .hastalik-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .hastalik-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .hastalik-table button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hastalik-table button:hover {
+    background-color: #d32f2f;
+  }
+  

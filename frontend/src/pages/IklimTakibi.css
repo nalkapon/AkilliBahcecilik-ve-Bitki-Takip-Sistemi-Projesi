@@ -1,0 +1,66 @@
+.iklim-container {
+    padding: 20px;
+  }
+  
+  .iklim-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .iklim-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .iklim-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .iklim-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .iklim-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .iklim-table th,
+  .iklim-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .iklim-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .iklim-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .iklim-table button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .iklim-table button:hover {
+    background-color: #d32f2f;
+  }
+  
