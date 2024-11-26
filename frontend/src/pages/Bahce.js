@@ -111,7 +111,8 @@ const Bahce = () => {
       <div className="bahce-list">
         {bahceler.map((bahce) => (
           <div key={bahce.bahce_id} className="bahce-card">
-            <h3>{bahce.bahce_adi}</h3>
+            <h3>Bahçe Adı: {bahce.bahce_adi}</h3>
+            <p>Bahçe ID: {bahce.bahce_id}</p> {/* Bahçe ID eklenmiştir */}
             <p>Konum: {bahce.konum}</p>
             <p>Alan Büyüklüğü: {bahce.alan_buyuklugu} m²</p>
             <button onClick={() => handleEdit(bahce)}>Düzenle</button>
