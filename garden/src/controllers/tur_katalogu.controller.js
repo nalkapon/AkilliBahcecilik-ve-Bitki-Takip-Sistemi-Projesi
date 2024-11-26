@@ -18,21 +18,30 @@ exports.getAll = (req, res) => {
 };
 
 // Tür Kataloğu verisi ekle (POST)
+// Tür Kataloğu verisi ekle (POST)
 exports.create = (req, res) => {
     const { tur_adi, sulama_sikligi } = req.body;
+
+    // Verilerin doğru geldiğini kontrol et
+    console.log("Received data:", req.body);  // Bu satırla veriyi kontrol edin
 
     if (!tur_adi || !sulama_sikligi) {
         return res.status(400).send({ message: 'Tür adı ve sulama sıklığı zorunludur!' });
     }
 
-    const query = 'INSERT INTO tur_katalogu (tur_adi, sulama_sikligi) VALUES (?, ?)';
+    const query = `INSERT INTO tur_katalogu (tur_adi, sulama_sikligi) VALUES (?, ?)`;
+
     req.db.query(query, [tur_adi, sulama_sikligi], (err, result) => {
         if (err) {
-            return res.status(500).send({ message: 'Tür eklenirken bir hata oluştu.', error: err.message });
+            console.error('Veritabanı Hatası:', err.message);
+            return res.status(500).send({ message: 'Veri eklenemedi', error: err.message });
         }
-        res.status(201).send({ message: 'Tür başarıyla eklendi!' });
+
+        res.status(201).send({ message: 'Tür başarıyla eklendi', id: result.insertId });
     });
 };
+
+
 
 // Tür Kataloğu güncelleme (PUT)
 exports.update = (req, res) => {

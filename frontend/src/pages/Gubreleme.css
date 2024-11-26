@@ -1,64 +1,117 @@
+/* Container Styling */
 .gubreleme-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.gubreleme-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gubreleme-form input,
+.gubreleme-form button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Input Fields */
+.gubreleme-form input {
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.gubreleme-form input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background-color: #ffffff;
+}
+
+.gubreleme-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.gubreleme-form button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Table Styling */
+.gubreleme-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gubreleme-table th,
+.gubreleme-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.gubreleme-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.gubreleme-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.gubreleme-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+.gubreleme-table button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gubreleme-table button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gubreleme-form {
     padding: 20px;
   }
-  
-  .gubreleme-form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .gubreleme-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .gubreleme-form button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .gubreleme-form button:hover {
-    background-color: #45a049;
-  }
-  
-  .gubreleme-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
+
   .gubreleme-table th,
   .gubreleme-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  .gubreleme-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .gubreleme-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
+
   .gubreleme-table button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 6px 10px;
   }
-  
-  .gubreleme-table button:hover {
-    background-color: #d32f2f;
-  }
-  
+}

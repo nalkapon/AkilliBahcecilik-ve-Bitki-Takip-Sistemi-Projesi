@@ -90,7 +90,7 @@ const HastalikTakibi = () => {
       <table className="hastalik-table">
         <thead>
           <tr>
-            <th>ID</th>
+            {/* ID Sütununu Gizliyoruz */}
             <th>Bitki ID</th>
             <th>Hastalık ID</th>
             <th>Tarih</th>
@@ -102,7 +102,7 @@ const HastalikTakibi = () => {
         <tbody>
           {hastalikTakibiList.map((item) => (
             <tr key={item.hastalik_takibi_id}>
-              <td>{item.hastalik_takibi_id}</td>
+              {/* ID'yi Gizledik */}
               <td>{item.bitki_id}</td>
               <td>{item.hastalik_id}</td>
               <td>{item.hastalik_tarihi}</td>

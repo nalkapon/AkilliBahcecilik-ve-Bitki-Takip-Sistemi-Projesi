@@ -1,66 +1,89 @@
+/* Ana container */
 .iklim-container {
-    padding: 20px;
-  }
-  
-  .iklim-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .iklim-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  .iklim-form button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .iklim-form button:hover {
-    background-color: #45a049;
-  }
-  
-  .iklim-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .iklim-table th,
-  .iklim-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .iklim-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .iklim-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .iklim-table button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .iklim-table button:hover {
-    background-color: #d32f2f;
-  }
-  
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form stili */
+.iklim-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.iklim-form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.iklim-form input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.iklim-form button {
+  padding: 12px 18px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.iklim-form button:hover {
+  background-color: #45a049;
+}
+
+/* Liste ve Kart stili */
+.iklim-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.iklim-table th,
+.iklim-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.iklim-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.iklim-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.iklim-table button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.iklim-table button:hover {
+  background-color: #d32f2f;
+}

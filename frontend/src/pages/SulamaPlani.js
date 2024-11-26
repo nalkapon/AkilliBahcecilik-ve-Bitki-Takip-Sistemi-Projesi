@@ -35,6 +35,18 @@ const SulamaPlani = () => {
   // Yeni Sulama Planı Ekle veya Güncelle
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Doğrulama: Bitki ID ve Su Miktarının Geçerliliği
+    if (formData.bitki_id <= 0) {
+      alert("Bitki ID sıfırdan büyük olmalıdır!");
+      return;
+    }
+
+    if (formData.su_miktari <= 0) {
+      alert("Su miktarı sıfırdan büyük olmalıdır!");
+      return;
+    }
+
     try {
       if (editingId) {
         await axios.put(
@@ -128,7 +140,6 @@ const SulamaPlani = () => {
       <table className="sulama-table">
         <thead>
           <tr>
-            <th>Sulama ID</th>
             <th>Bitki ID</th>
             <th>Sulama Tarihi</th>
             <th>Su Miktarı</th>
@@ -140,7 +151,6 @@ const SulamaPlani = () => {
         <tbody>
           {sulamaPlanlari.map((plan) => (
             <tr key={plan.sulama_id}>
-              <td>{plan.sulama_id}</td>
               <td>{plan.bitki_id}</td>
               <td>{plan.sulama_tarihi}</td>
               <td>{plan.su_miktari} L</td>

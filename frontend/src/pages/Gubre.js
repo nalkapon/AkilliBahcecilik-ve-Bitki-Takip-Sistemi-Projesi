@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../api';
-import './Gubre.css'; // CSS dosyasını dahil ettik
+import './Gubre.css'; 
 
 const Gubre = () => {
     const [gubreler, setGubreler] = useState([]);

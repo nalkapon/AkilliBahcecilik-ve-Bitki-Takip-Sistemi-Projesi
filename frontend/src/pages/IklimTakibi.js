@@ -92,7 +92,7 @@ const IklimTakibi = () => {
       <table className="iklim-table">
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Bahçe ID</th>
             <th>Kayıt Tarihi</th>
             <th>Sıcaklık</th>
@@ -104,7 +104,7 @@ const IklimTakibi = () => {
         <tbody>
           {iklimList.map((item) => (
             <tr key={item.iklim_id}>
-              <td>{item.iklim_id}</td>
+              {/* <td>{item.iklim_id}</td> */}
               <td>{item.bahce_id}</td>
               <td>{item.kayit_tarihi}</td>
               <td>{item.sicaklik} °C</td>

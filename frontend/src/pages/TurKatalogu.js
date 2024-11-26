@@ -20,17 +20,20 @@ const TurKatalogu = () => {
   };
 
   // Yeni tür ekleme
-  const addTurKatalogu = async (turAdi, sulamaSikligi) => {
-    try {
-        // Yalnızca gereken verileri gönderiyoruz
-        const response = await axios.post('http://localhost:3001/api/tur_katalogu', {
-            tur_adi: turAdi,
-            sulama_sikligi: sulamaSikligi // Bu, sadece metin veya ENUM değerini alır
-        });
-        console.log(response.data);
-    } catch (error) {
-        console.error('Hata:', error.response ? error.response.data : error.message);
-    }
+// Yeni tür ekleme fonksiyonu
+const addTurKatalogu = async () => {
+  try {
+    const { tur_adi, sulama_sikligi } = formData;
+    // Yalnızca gereken verileri gönderiyoruz
+    const response = await axios.post('http://localhost:3001/api/tur_katalogu', {
+      tur_adi,
+      sulama_sikligi
+    });
+    console.log(response.data);
+    fetchTurKatalogu(); // Listeyi güncelle
+  } catch (error) {
+    console.error('Hata:', error.response ? error.response.data : error.message);
+  }
 };
 
 

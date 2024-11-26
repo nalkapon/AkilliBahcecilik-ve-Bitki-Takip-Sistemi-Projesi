@@ -13,10 +13,11 @@ exports.create = (req, res) => {
             console.error('Veritabanı Hatası (Ekleme):', err.message);
             return res.status(500).send({ message: 'Hastalık takibi eklenirken bir hata oluştu.' });
         }
-
+        console.log('Hastalık Takibi Başarıyla Eklendi:', result);
         res.status(201).send({ message: 'Hastalık takibi başarıyla eklendi!', id: result.insertId });
     });
 };
+
 
 // Tüm Hastalık Takiplerini Listeleme (GET)
 exports.getAll = (req, res) => {

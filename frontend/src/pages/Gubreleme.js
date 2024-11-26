@@ -23,6 +23,17 @@ const Gubreleme = () => {
 
   // Yeni gübreleme ekleme
   const addGubreleme = async () => {
+    // Kontroller
+    if (formData.miktar <= 0) {
+      alert("Miktar sıfırdan büyük olmalıdır!");
+      return;
+    }
+
+    if (formData.gubre_id <= 0 || formData.bitki_id <= 0) {
+      alert("Gübre ID ve Bitki ID sıfırdan büyük olmalıdır!");
+      return;
+    }
+
     try {
       await axios.post('http://localhost:3001/api/gubreleme', formData);
       setFormData({
@@ -62,7 +73,7 @@ const Gubreleme = () => {
           onChange={(e) => setFormData({ ...formData, gubreleme_tarihi: e.target.value })}
         />
         <input
-          type="text"
+          type="number"
           placeholder="Gübre ID"
           value={formData.gubre_id}
           onChange={(e) => setFormData({ ...formData, gubre_id: e.target.value })}
@@ -74,7 +85,7 @@ const Gubreleme = () => {
           onChange={(e) => setFormData({ ...formData, miktar: e.target.value })}
         />
         <input
-          type="text"
+          type="number"
           placeholder="Bitki ID"
           value={formData.bitki_id}
           onChange={(e) => setFormData({ ...formData, bitki_id: e.target.value })}
@@ -84,7 +95,7 @@ const Gubreleme = () => {
       <table className="gubreleme-table">
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Tarih</th>
             <th>Gübre ID</th>
             <th>Miktar</th>
@@ -95,7 +106,7 @@ const Gubreleme = () => {
         <tbody>
           {gubrelemeList.map((gubreleme) => (
             <tr key={gubreleme.gubreleme_id}>
-              <td>{gubreleme.gubreleme_id}</td>
+              {/* <td>{gubreleme.gubreleme_id}</td> */}
               <td>{gubreleme.gubreleme_tarihi}</td>
               <td>{gubreleme.gubre_id}</td>
               <td>{gubreleme.miktar}</td>
