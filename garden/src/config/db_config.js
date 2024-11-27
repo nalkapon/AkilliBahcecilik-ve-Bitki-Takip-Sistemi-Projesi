@@ -1,9 +1,9 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root', // MySQL kullanıcı adınız
-    password: '1234', // MySQL şifreniz
+    password: 'alperen', // MySQL şifreniz
     database: 'garden_management', // Veritabanı adı
 });
 

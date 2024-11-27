@@ -1,0 +1,260 @@
+<html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+.jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed,
+.summary-obsolete-snapshots {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMessages.suiteFailure {
+  border-top: none;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-container > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+.suite-container label {
+  display: block;
+}
+.suite-container .suite-tests {
+  overflow-y: hidden;
+  height: 0;
+}
+.suite-container > input[type="checkbox"]:checked ~ .suite-tests {
+  height: auto;
+  overflow: visible;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+.suite-info:before {
+  content: "\2303";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transform: rotate(0deg);
+}
+.suite-container > input[type="checkbox"]:checked ~ label .suite-info:before {
+  transform: rotate(180deg);
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+/* OBSOLETE SNAPSHOTS */
+.suite-obsolete-snapshots {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.suite-obsolete-snapshots-header {
+  font-weight: bold;
+}
+.suite-obsolete-snapshots-item {
+  padding: 0.5rem;
+}
+.suite-obsolete-snapshots-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-obsolete-snapshots-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div class="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2024-11-27 23:39:50</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (12)</div><div class="summary-passed ">12 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (123)</div><div class="summary-passed ">123 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><input id="collapsible-0" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-0"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\iklim_takibi.controller.test.js</div><div class="suite-time">0.272s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; create</div><div class="test-title">should create climate record successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; create</div><div class="test-title">should handle database error when creating climate record</div><div class="test-status">passed</div><div class="test-duration">0.008s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; getAll</div><div class="test-title">should retrieve all climate records successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving climate records</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; update</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; update</div><div class="test-title">should update climate record successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; update</div><div class="test-title">should handle database error when updating climate record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; delete</div><div class="test-title">should delete climate record successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; delete</div><div class="test-title">should return 404 if climate record not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">İklim Takibi Controller &gt; delete</div><div class="test-title">should handle database error when deleting climate record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-2" class="suite-container"><input id="collapsible-1" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-1"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\hastalik_katalogu.controller.test.js</div><div class="suite-time">0.095s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; POST /hastalik_katalogu</div><div class="test-title">should create a new hastalik successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; POST /hastalik_katalogu</div><div class="test-title">should return an error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; POST /hastalik_katalogu</div><div class="test-title">should return an error if there is a database issue</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; GET /hastalik_katalogu</div><div class="test-title">should retrieve all hastalik katalogu successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; GET /hastalik_katalogu</div><div class="test-title">should return an error if the query fails</div><div class="test-status">passed</div><div class="test-duration">0.003s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; PUT /hastalik_katalogu/:id</div><div class="test-title">should update an existing hastalik successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; PUT /hastalik_katalogu/:id</div><div class="test-title">should return an error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; PUT /hastalik_katalogu/:id</div><div class="test-title">should return an error if update fails</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; PUT /hastalik_katalogu/:id</div><div class="test-title">should return an error if the disease is not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; DELETE /hastalik_katalogu/:id</div><div class="test-title">should delete an existing hastalik successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; DELETE /hastalik_katalogu/:id</div><div class="test-title">should return an error if deletion fails</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Katalogu CRUD Operations &gt; DELETE /hastalik_katalogu/:id</div><div class="test-title">should return an error if the disease is not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-3" class="suite-container"><input id="collapsible-2" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-2"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\bitki.controller.test.js</div><div class="suite-time">0.056s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; getAll</div><div class="test-title">should retrieve all plants successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving plants</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; create</div><div class="test-title">should create a new plant successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; create</div><div class="test-title">should return error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; create</div><div class="test-title">should handle database error during plant creation</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; update</div><div class="test-title">should update a plant successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; update</div><div class="test-title">should return error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; update</div><div class="test-title">should return 404 if plant not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; delete</div><div class="test-title">should delete a plant successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bitki Controller &gt; delete</div><div class="test-title">should return 404 if plant not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-4" class="suite-container"><input id="collapsible-3" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-3"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\bahce.controller.test.js</div><div class="suite-time">0.049s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; create</div><div class="test-title">should create a new garden successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; create</div><div class="test-title">should handle database error when creating garden</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; getAll</div><div class="test-title">should retrieve all gardens successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving gardens</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; update</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; update</div><div class="test-title">should update garden successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; update</div><div class="test-title">should handle database error when updating garden</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; delete</div><div class="test-title">should delete garden successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; delete</div><div class="test-title">should return 404 if garden not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçe Controller &gt; delete</div><div class="test-title">should handle database error when deleting garden</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-5" class="suite-container"><input id="collapsible-4" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-4"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\bahcivan_bahce.controller.test.js</div><div class="suite-time">0.059s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; create</div><div class="test-title">should create a new record successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; create</div><div class="test-title">should handle database error when creating record</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; getAll</div><div class="test-title">should retrieve all records successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving records</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; update</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; update</div><div class="test-title">should update the record successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; update</div><div class="test-title">should handle database error when updating record</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; delete</div><div class="test-title">should delete the record successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Bahçe Controller &gt; delete</div><div class="test-title">should handle database error when deleting record</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-6" class="suite-container"><input id="collapsible-5" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-5"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\bakim.controller.test.js</div><div class="suite-time">0.049s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; create</div><div class="test-title">should add a new bakım successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; create</div><div class="test-title">should handle database error when adding bakım</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; getAll</div><div class="test-title">should retrieve all bakım records successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving bakım records</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; update</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; update</div><div class="test-title">should update bakım record successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; update</div><div class="test-title">should return 404 if bakım record not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; update</div><div class="test-title">should handle database error when updating bakım record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; delete</div><div class="test-title">should delete bakım record successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; delete</div><div class="test-title">should return 404 if bakım record not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bakım Controller &gt; delete</div><div class="test-title">should handle database error when deleting bakım record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-7" class="suite-container"><input id="collapsible-6" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-6"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\tur_katalogu.controller.test.js</div><div class="suite-time">0.041s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; create</div><div class="test-title">should create a new entry successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; create</div><div class="test-title">should handle database error when creating entry</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; getAll</div><div class="test-title">should retrieve all entries successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; getAll</div><div class="test-title">should handle database error when retrieving entries</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; update</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; update</div><div class="test-title">should update entry successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; update</div><div class="test-title">should handle database error when updating entry</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; delete</div><div class="test-title">should delete entry successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; delete</div><div class="test-title">should return 404 if entry not found</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">TürKatalogu Controller &gt; delete</div><div class="test-title">should handle database error when deleting entry</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-8" class="suite-container"><input id="collapsible-7" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-7"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\sulama_plani.controller.test.js</div><div class="suite-time">0.039s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; create</div><div class="test-title">tüm zorunlu alanlar olmadan 400 hatası döner</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; create</div><div class="test-title">geçerli veri ile başarılı kayıt yapar</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; create</div><div class="test-title">veritabanı hatası durumunda 500 döner</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; getAll</div><div class="test-title">başarılı listeleme yapar</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; getAll</div><div class="test-title">veritabanı hatası durumunda 500 döner</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; update</div><div class="test-title">geçersiz veri ile 400 hatası döner</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; update</div><div class="test-title">başarılı güncelleme yapar</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; update</div><div class="test-title">bulunamayan kayıt için 404 döner</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; delete</div><div class="test-title">başarılı silme işlemi yapar</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; delete</div><div class="test-title">bulunamayan kayıt için 404 döner</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Sulama Planı Controller &gt; delete</div><div class="test-title">veritabanı hatası durumunda 500 döner</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-9" class="suite-container"><input id="collapsible-8" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-8"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\gubreleme.controller.test.js</div><div class="suite-time">0.037s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; create</div><div class="test-title">should return 400 if any required field is missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; create</div><div class="test-title">should successfully create a gubreleme</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; create</div><div class="test-title">should handle database insert error</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; getAll</div><div class="test-title">should successfully retrieve all gubreleme records</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; getAll</div><div class="test-title">should handle database error in getAll</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; update</div><div class="test-title">should return 400 if any required field is missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; update</div><div class="test-title">should successfully update a gubreleme record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; update</div><div class="test-title">should return 404 if no gubreleme record found to update</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; delete</div><div class="test-title">should successfully delete a gubreleme record</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gubreleme Controller Tests &gt; delete</div><div class="test-title">should return 404 if no gubreleme record found to delete</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-10" class="suite-container"><input id="collapsible-9" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-9"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\hastalik_takibi.controller.test.js</div><div class="suite-time">0.045s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; POST /hastalik_takibi</div><div class="test-title">should create a new hastalik takibi successfully</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; POST /hastalik_takibi</div><div class="test-title">should return error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; POST /hastalik_takibi</div><div class="test-title">should return database error if insertion fails</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; GET /hastalik_takibi</div><div class="test-title">should retrieve all hastalik takipleri successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; GET /hastalik_takibi</div><div class="test-title">should return error if query fails</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; PUT /hastalik_takibi/:id</div><div class="test-title">should update an existing hastalik takibi successfully</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; PUT /hastalik_takibi/:id</div><div class="test-title">should return error if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; PUT /hastalik_takibi/:id</div><div class="test-title">should return error if update fails</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; PUT /hastalik_takibi/:id</div><div class="test-title">should return error if hastalik takibi not found</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; DELETE /hastalik_takibi/:id</div><div class="test-title">should delete an existing hastalik takibi successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; DELETE /hastalik_takibi/:id</div><div class="test-title">should return error if deletion fails</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Hastalık Takibi CRUD Operations &gt; DELETE /hastalik_takibi/:id</div><div class="test-title">should return error if hastalik takibi not found</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-11" class="suite-container"><input id="collapsible-10" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-10"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\gubre.controller.test.js</div><div class="suite-time">0.035s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; create</div><div class="test-title">should return 400 if gubre_adi or gubre_aciklamasi is missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; create</div><div class="test-title">should successfully create a gübre and return created record</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; create</div><div class="test-title">should handle database insert error</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; getAll</div><div class="test-title">should successfully retrieve all gübres</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; getAll</div><div class="test-title">should handle database error in getAll</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; update</div><div class="test-title">should return 400 if gubre_adi or gubre_aciklamasi is missing</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; update</div><div class="test-title">should successfully update a gübre</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; update</div><div class="test-title">should return 404 if no gübre found to update</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; delete</div><div class="test-title">should successfully delete a gübre</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Gübre Controller Tests &gt; delete</div><div class="test-title">should return 404 if no gübre found to delete</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-12" class="suite-container"><input id="collapsible-11" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-11"><div class="suite-info"><div class="suite-path">D:\Projeler\372_proje\AkilliBahcecilik-ve-Bitki-Takip-Sistemi-Projesi\garden\test\bahcivan.controller.test.js</div><div class="suite-time">0.031s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Controller - Create</div><div class="test-title">should return 400 if required fields are missing</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Controller - Create</div><div class="test-title">should create a new bahçıvan successfully</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Bahçıvan Controller - Create</div><div class="test-title">should handle database error when creating bahçıvan</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div></div></body></html>
