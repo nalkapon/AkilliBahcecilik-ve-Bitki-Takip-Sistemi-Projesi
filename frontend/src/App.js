@@ -15,13 +15,14 @@ import HastalikKatalogu from './pages/HastalikKatalogu';
 import BahcivanBahce from './pages/BahcivanBahce';
 import Bitki from "./pages/Bitki";
 import './App.css';
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} /> {/* Ana sayfayı doğru şekilde ekledik */}
         <Route path="/gubre" element={<Gubre />} />
         <Route path="/bitki" element={<Bitki />} />
         <Route path="/raporlar" element={<Raporlar />} />
@@ -37,28 +38,6 @@ const App = () => {
         <Route path="/bahcivan-bahce" element={<BahcivanBahce />} />
       </Routes>
     </Router>
-  );
-};
-
-// Ana Sayfa
-const HomePage = () => {
-  return (
-    <div className="home-container">
-      <h1>Bahçenizi Verimli Yönetin</h1>
-      <p>
-        Bahçecilik ve bitki takibi sistemimize hoş geldiniz! Bahçenizdeki bitkiler, sulama,
-        gübreleme ve hastalık takibini kolayca yönetebilirsiniz.
-      </p>
-      <p>
-        Sistem genelinde analizler ve raporlarla bahçenizi verimli bir şekilde yönetmek için
-        araçlar sağlıyoruz.
-      </p>
-      <div className="button-container">
-        <button className="start-button">
-          <a href="/bahce">Başlayın</a>
-        </button>
-      </div>
-    </div>
   );
 };
 

@@ -143,6 +143,7 @@ const Bitki = () => {
                 {bitkiler.map((bitki) => (
                     <div className="bitki-card" key={bitki.bitki_id}>
                         <h3>{bitki.bitki_adi}</h3>
+                        <p>Bitki ID: {bitki.bitki_id}</p> {/* Bitki ID'si eklenmiştir */}
                         <p>Tür ID: {bitki.tur_id}</p>
                         <p>Sulama Sıklığı: {bitki.sulama_sikligi}</p>
                         <p>Ekim Tarihi: {bitki.ekim_tarihi}</p>
@@ -150,7 +151,6 @@ const Bitki = () => {
                         <p>Toprak Türü: {bitki.toprak_turu}</p>
                         <p>Bakım Notları: {bitki.bakim_notlari}</p>
                         <p>Bahçe ID: {bitki.bahce_id}</p>
-                        <button onClick={() => handleEdit(bitki)}>Düzenle</button>
                         <button onClick={() => handleDelete(bitki.bitki_id)}>Sil</button>
                     </div>
                 ))}
